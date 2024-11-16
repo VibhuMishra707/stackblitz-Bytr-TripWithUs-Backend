@@ -221,12 +221,12 @@ function sortHotelsByPriceDescending(hotel_1, hotel_2) {
 }
 
 app.get('/hotels/sort/pricing', (req, res) => {
-  let sortType = req.query.sortType;
-  if (sortType === 'low-to-high') {
+  let pricing = req.query.pricing;
+  if (pricing === 'low-to-high') {
     let hotelsCopy = hotels.slice();
     hotelsCopy.sort(sortHotelsByPriceAscending);
     res.json(hotelsCopy);
-  } else if (sortType === 'high-to-low') {
+  } else if (pricing === 'high-to-low') {
     let hotelsCopy = hotels.slice();
     hotelsCopy.sort(sortHotelsByPriceDescending);
     res.json(hotelsCopy);
@@ -236,8 +236,8 @@ app.get('/hotels/sort/pricing', (req, res) => {
 });
 
 // Path = /hotels/sort/pricing
-// Path = /hotels/sort/pricing?sortType=low-to-high
-// Path = /hotels/sort/pricing?sortType=high-to-low
+// Path = /hotels/sort/pricing?pricing=low-to-high
+// Path = /hotels/sort/pricing?pricing=high-to-low
 
 // Endpoint - 2 (Get the hotels sorted by their Ratings)
 
@@ -250,12 +250,12 @@ function sortHotelsByRatingDescending(hotel_1, hotel_2) {
 }
 
 app.get('/hotels/sort/rating', (req, res) => {
-  let sortType = req.query.sortType;
-  if (sortType === 'low-to-high') {
+  let rating = req.query.rating;
+  if (rating === 'low-to-high') {
     let hotelsCopy = hotels.slice();
     hotelsCopy.sort(sortHotelsByRatingAscending);
     res.json(hotelsCopy);
-  } else if (sortType === 'high-to-low') {
+  } else if (rating === 'high-to-low') {
     let hotelsCopy = hotels.slice();
     hotelsCopy.sort(sortHotelsByRatingDescending);
     res.json(hotelsCopy);
@@ -265,8 +265,8 @@ app.get('/hotels/sort/rating', (req, res) => {
 });
 
 // Path = /hotels/sort/rating
-// Path = /hotels/sort/rating?sortType=low-to-high
-// path = /hotels/sort/rating?sortType=high-to-low
+// Path = /hotels/sort/rating?rating=low-to-high
+// path = /hotels/sort/rating?rating=high-to-low
 
 // Endpoint - 3 (Get the Hotels sorted based on their Reviews)
 
